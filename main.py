@@ -1,9 +1,13 @@
 """One Line of Earned Pride — make.fun entry.
 
 Writes a single line of text (1-240 characters) to /output/entry.txt:
-a quiet, earned moment of pride for someone in a scene — a man who
-has rehearsed saying his own name finally saying it at a counter,
-and being heard.
+a quiet, earned moment of pride for someone in a scene — a girl
+lighter than the bell rope who leans her whole weight into it
+until the tenor bell above her turns over and speaks.
+
+Revision (round 2): entry changed from the rehearsed-name line to
+the bell-ringer line after blind-duel verification found the bell
+line stronger (difficulty self-evident in one read, freshest image).
 
 Deterministic: no network, no environment, no files outside this
 repository. The output is byte-identical on every run.
@@ -12,9 +16,9 @@ repository. The output is byte-identical on every run.
 import os
 
 ENTRY = (
-    "He had rehearsed it in the truck for an hour; at the counter "
-    "he said his own name, all three syllables of it, and the "
-    "pharmacist wrote it down."
+    "The rope was heavier than she was, so she leaned back and let "
+    "her whole weight go, and the tenor bell above her turned over "
+    "and spoke."
 )
 
 OUTPUT_PATH = "/output/entry.txt"
