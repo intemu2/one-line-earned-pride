@@ -1,13 +1,15 @@
-"""One Line of Earned Pride — make.fun entry.
+"""One Line of Earned Pride - make.fun entry.
 
 Writes a single line of text (1-240 characters) to /output/entry.txt:
-a quiet, earned moment of pride for someone in a scene — a girl
-lighter than the bell rope who leans her whole weight into it
-until the tenor bell above her turns over and speaks.
+a quiet, earned moment of pride for someone in a scene - after
+forty-two rejections, a quiet mechanic wipes grease from his
+knuckles and hands over the keys to a car that finally starts
+on the first turn.
 
-Revision (round 2): entry changed from the rehearsed-name line to
-the bell-ringer line after blind-duel verification found the bell
-line stronger (difficulty self-evident in one read, freshest image).
+Revision (round 3): entry changed from the bell-ringer line to
+the mechanic line after review - the effort is quantified
+(forty-two rejections), the scene is concrete (grease, knuckles,
+keys), and the payoff lands in the last words.
 
 Deterministic: no network, no environment, no files outside this
 repository. The output is byte-identical on every run.
@@ -16,9 +18,9 @@ repository. The output is byte-identical on every run.
 import os
 
 ENTRY = (
-    "The rope was heavier than she was, so she leaned back and let "
-    "her whole weight go, and the tenor bell above her turned over "
-    "and spoke."
+    "After forty-two rejections, the quiet mechanic wipes grease "
+    "from his knuckles and hands over the keys to a car that "
+    "finally starts on the first turn."
 )
 
 OUTPUT_PATH = "/output/entry.txt"
@@ -29,6 +31,8 @@ def main() -> None:
     # UTF-8 text, not only whitespace.
     assert 1 <= len(ENTRY) <= 240, "entry must be 1-240 characters"
     assert ENTRY.strip(), "entry must not be only whitespace"
+    assert "\n" not in ENTRY, "entry must be a single line"
+    assert len(ENTRY) == 149, "entry must be exactly 149 characters"
     ENTRY.encode("utf-8")
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
